@@ -1,0 +1,28 @@
+name: CI
+on:
+  push:
+jobs:
+  Testing:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: conda creation
+        uses: mamba-org/setup-micromamba@v2
+        with:
+          environment-file: envs/development.yml
+          init-shell: bash
+          cache-environment: true
+          cache-downloads: true
+          generate-run-shell: true
+          post-cleanup: 'none'
+
+      - name: Environment info
+        shell: micromamba-shell {0}
+        run: |
+          micromamba info
+          micromamba list
+
+      - name: Run Python script
+        shell: micromamba-shell {0}
+        run: |
+          python app/example.py

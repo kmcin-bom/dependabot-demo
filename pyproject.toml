@@ -1,0 +1,9 @@
+[project]
+name = "dependabot-test"
+dynamic = ["version"]
+readme = "README.md"
+description = "dependabot."
+dependencies = [
+  # Refer to environment.yml
+  "requests==2.20.0",
+]
