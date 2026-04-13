@@ -12,10 +12,10 @@ updates:
       interval: "weekly" # daily, weekly ...
 
   # 2. Pip: Monitors pyproject.toml
-  - package-ecosystem: "pip"
-    directory: "/"
-    schedule:
-      interval: "weekly"
+ # - package-ecosystem: "pip"
+  #  directory: "/"
+   # schedule:
+    #  interval: "weekly"
 
    # 3. GitHub Actions: Monitors workflow files
   - package-ecosystem: "github-actions"
